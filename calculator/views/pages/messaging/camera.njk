@@ -1,0 +1,43 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
+
+{% block casaPageTitle %}
+  {{ t('Calls and messaging:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Calls and messaging') }}
+    </h1>
+
+  {{ casaGovukRadios({
+    name: 'camera',
+    casaValue: formData.camera,
+    casaErrors: formErrors,
+    fieldset: {
+        legend: {
+        text: 'How often do you turn your camera on in calls?',
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+    },
+    items: [
+        {
+        value: 'yes',
+        text: 'All of the time'
+        },
+        {
+        value: 'sometimes',
+        text: 'Some of the time'
+        },
+        {
+        value: 'no',
+        text: 'Not at all'
+        }
+    ]
+  }) }}
+
+
+{% endblock %}

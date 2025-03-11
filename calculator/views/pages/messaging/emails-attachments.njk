@@ -1,0 +1,51 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
+
+{% block casaPageTitle %}
+  {{ t('Emails:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Emails') }}
+    </h1>
+
+  {{ casaGovukRadios({
+    name: 'emailsAttachments',
+    casaValue: formData.emailsAttachments,
+    casaErrors: formErrors,
+    fieldset: {
+        legend: {
+        text: 'How many emails have an attachment?',
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+    },
+    items: [
+        {
+        value: '0',
+        text: 'None'
+        },
+        {
+        value: '10',
+        text: '1 to 19'
+        },
+        {
+        value: '35',
+        text: '20 to 49'
+        },
+        {
+        value: '75',
+        text: '50 to 100'
+        },
+        {
+        value: '150',
+        text: 'more than 100'
+        }
+    ]
+  }) }}
+
+
+{% endblock %}

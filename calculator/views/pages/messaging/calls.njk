@@ -1,0 +1,51 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
+
+{% block casaPageTitle %}
+  {{ t('Calls and messaging:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Calls and messaging') }}
+    </h1>
+
+  {{ casaGovukRadios({
+    name: 'calls',
+    casaValue: formData.calls,
+    casaErrors: formErrors,
+    fieldset: {
+        legend: {
+        text: 'How many hours do you spend in calls a week?',
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+    },
+    items: [
+        {
+        value: '0',
+        text: 'None'
+        },
+        {
+        value: '2.5',
+        text: '0 to 5'
+        },
+        {
+        value: '8',
+        text: '6 to 10'
+        },
+        {
+        value: '13',
+        text: '11 to 15'
+        },
+        {
+        value: '20',
+        text: 'more than 15'
+        }
+    ]
+  }) }}
+
+
+{% endblock %}

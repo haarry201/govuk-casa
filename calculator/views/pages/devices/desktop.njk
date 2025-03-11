@@ -1,0 +1,42 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
+
+{% block casaPageTitle %}
+  {{ t('desktop:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Devices') }}
+    </h1>
+
+  {{ casaGovukRadios({
+    name: 'desktop',
+    casaValue: formData.desktop,
+    casaErrors: formErrors,
+    fieldset: {
+        legend: {
+        text: 'Do you use a desktop computer for work?',
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+    },
+    hint: {
+        text: 'A desktop is a computer in a fixed place, not a laptop connected to a monitor.'
+    },
+    items: [
+      {
+        value: 'yes',
+        text: 'Yes'
+      },
+      {
+        value: 'no',
+        text: 'No'
+      }
+    ]
+  }) }}
+
+
+{% endblock %}

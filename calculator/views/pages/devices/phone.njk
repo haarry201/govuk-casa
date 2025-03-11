@@ -1,0 +1,46 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
+
+{% block casaPageTitle %}
+  {{ t('phone:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Devices') }}
+    </h1>
+
+  {{ casaGovukRadios({
+    name: 'phone',
+    casaValue: formData.phone,
+    casaErrors: formErrors,
+    fieldset: {
+        legend: {
+        text: 'What work phone do you use?',
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+    },
+    items: [
+      {
+        value: 'android',
+        text: 'Android'
+      },
+      {
+        value: 'iphone',
+        text: 'iPhone'
+      },
+      {
+          divider: "or"
+      },
+      {
+        value: 'no',
+        text: "I don't use a work phone"
+      }
+    ]
+  }) }}
+
+
+{% endblock %}

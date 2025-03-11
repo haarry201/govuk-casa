@@ -1,0 +1,21 @@
+{
+    "name": "govuk-casa-carbon-calculator",
+    "version": "1.0.0",
+    "description": "DWP Carbon calculator",
+    "keywords": [],
+    "license": "ISC",
+    "author": "Harry Kenny",
+    "type": "module",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "devStart": "nodemon server.js"
+    },
+    "dependencies": {
+        "@dwp/govuk-casa": "^9.0.0",
+        "express": "4.21.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.9"
+    }
+}

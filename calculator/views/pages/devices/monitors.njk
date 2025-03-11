@@ -1,0 +1,50 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
+
+{% block casaPageTitle %}
+  {{ t('Monitors:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Devices') }}
+    </h1>
+
+  {{ casaGovukRadios({
+    name: 'monitors',
+    casaValue: formData.monitors,
+    casaErrors: formErrors,
+    fieldset: {
+        legend: {
+        text: 'How many computer monitors do you use for work?',
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+    },
+    hint: {
+        text: 'Do not include a laptop screen.'
+    },
+    items: [
+      {
+        value: '0',
+        text: 'None'
+      },
+      {
+        value: '1',
+        text: '1'
+      },
+      {
+        value: '2',
+        text: "2"
+      },
+      {
+        value: '3',
+        text: "3"
+      }
+    ]
+  }) }}
+
+
+{% endblock %}

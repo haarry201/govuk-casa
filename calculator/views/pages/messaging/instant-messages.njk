@@ -1,0 +1,54 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
+
+{% block casaPageTitle %}
+  {{ t('Calls and messaging:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Calls and messaging') }}
+    </h1>
+
+  {{ casaGovukRadios({
+    name: 'instantMessages',
+    casaValue: formData.instantMessages,
+    casaErrors: formErrors,
+    fieldset: {
+        legend: {
+        text: 'How many work messages do you send a week?',
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+    },
+    hint: {
+            text: "For example, on Microsoft Teams"
+    },
+    items: [
+        {
+        value: '0',
+        text: 'None'
+        },
+        {
+        value: '25',
+        text: '1 to 49'
+        },
+        {
+        value: '75',
+        text: '50 to 99'
+        },
+        {
+        value: '125',
+        text: '100 to 149'
+        },
+        {
+        value: '200',
+        text: 'more than 150'
+        }
+    ]
+  }) }}
+
+
+{% endblock %}

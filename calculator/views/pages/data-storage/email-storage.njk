@@ -1,0 +1,58 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
+
+{% block casaPageTitle %}
+  {{ t('Storing data:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Storing data') }}
+    </h1>
+
+  {{ casaGovukRadios({
+    name: 'emailStorage',
+    casaValue: formData.emailStorage,
+    casaErrors: formErrors,
+    fieldset: {
+        legend: {
+        text: 'How often do you delete work emails?',
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+    },
+    hint: {
+        text: "Permanently delete, not archive"
+    },
+    items: [
+        {
+            value: '0.0333',
+            text: 'Daily'
+        },
+        {
+            value: '0.25',
+            text: 'Weekly'
+        },
+        {
+            value: '1',
+            text: 'Monthly'
+        },
+        {
+            value: '3',
+            text: 'Quarterly'
+        },
+        {
+            value: '12',
+            text: 'Yearly'
+        },
+        {
+            value: '36',
+            text: 'Never'
+        }
+    ]
+  }) }}
+
+
+{% endblock %}

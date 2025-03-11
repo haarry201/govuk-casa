@@ -1,0 +1,46 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
+
+{% block casaPageTitle %}
+  {{ t('laptop:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Devices') }}
+    </h1>
+
+  {{ casaGovukRadios({
+    name: 'laptop',
+    casaValue: formData.laptop,
+    casaErrors: formErrors,
+    fieldset: {
+        legend: {
+        text: 'What laptop do you use for work?',
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+    },
+    items: [
+      {
+        value: 'windows',
+        text: 'Windows'
+      },
+      {
+        value: 'macbook',
+        text: 'MacBook'
+      },
+      {
+          divider: "or"
+      },
+      {
+        value: 'no',
+        text: "I don't use a laptop"
+      }
+    ]
+  }) }}
+
+
+{% endblock %}

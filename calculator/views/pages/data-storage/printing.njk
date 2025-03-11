@@ -1,0 +1,51 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
+
+{% block casaPageTitle %}
+  {{ t('Storing data:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Storing data') }}
+    </h1>
+
+  {{ casaGovukRadios({
+    name: 'printing',
+    casaValue: formData.printing,
+    casaErrors: formErrors,
+    fieldset: {
+        legend: {
+        text: 'How many pages do you print in a week?',
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+    },
+    items: [
+        {
+        value: '0',
+        text: 'None'
+        },
+        {
+        value: '15',
+        text: '1 to 30'
+        },
+        {
+        value: '45',
+        text: '31 to 60'
+        },
+        {
+        value: '80',
+        text: '61 to 100'
+        },
+        {
+        value: '150',
+        text: 'more than 100'
+        }
+    ]
+  }) }}
+
+
+{% endblock %}
