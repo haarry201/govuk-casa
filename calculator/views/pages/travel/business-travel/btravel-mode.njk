@@ -1,0 +1,43 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
+
+{% block casaPageTitle %}
+  {{ t('Business travel:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Business travel') }}
+    </h1>
+
+  {{ casaGovukRadios({
+    name: 'btravelMode',
+    casaValue: formData.btravelMode,
+    casaErrors: formErrors,
+    fieldset: {
+        legend: {
+        text: 'How do you usually travel?',
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+    },
+    items: [
+      {
+        value: 'car',
+        text: "Car"
+      },
+      {
+        value: 'bus',
+        text: "Bus"
+      },
+      {
+        value: 'train',
+        text: "Train"
+      }
+    ]
+  }) }}
+
+
+{% endblock %}

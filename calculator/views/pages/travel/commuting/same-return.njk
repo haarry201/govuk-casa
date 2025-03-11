@@ -1,0 +1,39 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
+
+{% block casaPageTitle %}
+  {{ t('Commuting:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Commuting') }}
+    </h1>
+
+  {{ casaGovukRadios({
+    name: 'sameReturn',
+    casaValue: formData.sameReturn,
+    casaErrors: formErrors,
+    fieldset: {
+        legend: {
+        text: 'Do you return from work using the same transport?',
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+    },
+    items: [
+      {
+        value: 'yes',
+        text: 'Yes'
+      },
+      {
+        value: 'no',
+        text: 'No'
+      }
+    ]
+  }) }}
+
+
+{% endblock %}

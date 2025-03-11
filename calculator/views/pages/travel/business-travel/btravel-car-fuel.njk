@@ -1,0 +1,51 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
+
+{% block casaPageTitle %}
+  {{ t('Business travel:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Business travel') }}
+    </h1>
+
+  {{ casaGovukRadios({
+    name: 'btravelCarFuel',
+    casaValue: formData.btravelCarFuel,
+    casaErrors: formErrors,
+    fieldset: {
+        legend: {
+        text: 'What type of fuel does your car use?',
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+    },
+    items: [
+      {
+        value: 'petrol',
+        text: 'Petrol'
+      },
+      {
+        value: 'diesel',
+        text: 'Diesel'
+      },
+      {
+        value: 'ev',
+        text: 'Electricity'
+      },
+      {
+        value: 'hybrid',
+        text: 'Hybrid'
+      },
+      {
+        value: 'plugInHybrid',
+        text: 'Plug in hybrid'
+      }
+    ]
+  }) }}
+
+
+{% endblock %}

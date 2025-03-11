@@ -1,0 +1,29 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/input/macro.njk" import casaGovukInput with context %}
+
+{% block casaPageTitle %}
+  {{ t('Commuting:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Commuting') }}
+    </h1>
+
+  {{ casaGovukInput({
+    name: 'commuteDistance',
+    casaValue: formData.commuteDistance,
+    label: {
+      text: "How far do you travel in miles?",
+      classes: 'govuk-label--m'
+    },
+    hint: {
+        text: "One way. Must be a whole number"
+    },
+    classes: 'govuk-!-width-one-half',
+    casaErrors: formErrors
+  }) }}
+
+{% endblock %}

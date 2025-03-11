@@ -13,24 +13,40 @@
     </h1>
 
   {{ casaGovukRadios({
-    name: 'return',
-    casaValue: formData.return,
+    name: 'eveningMode',
+    casaValue: formData.eveningMode,
     casaErrors: formErrors,
     fieldset: {
         legend: {
-        text: 'Do you return from work by ' + formData.morningCommuteMode + '?',
+        text: 'How do you return from work?',
         isPageHeading: true,
         classes: 'govuk-fieldset__legend--m'
         }
     },
     items: [
       {
-        value: 'yes',
-        text: 'Yes'
+        value: 'walk',
+        text: 'Walk/wheeling/self-propelled'
       },
       {
-        value: 'no',
-        text: 'No'
+        value: 'bike',
+        text: 'Bike'
+      },
+      {
+        value: 'bus',
+        text: "Bus"
+      },
+      {
+        value: 'train',
+        text: "Train"
+      },
+      {
+        value: 'carshare',
+        text: "Car share"
+      },
+      {
+        value: 'tram',
+        text: "Tram or tube"
       }
     ]
   }) }}

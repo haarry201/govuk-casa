@@ -1,7 +1,7 @@
 import { field, validators as r, ValidationError} from "@dwp/govuk-casa";
 
 export default () => [
-    field("carSize").validators([
+    field("btravelCarFuel").validators([
         r.required.make({
         errorMsg: "You need to choose an answer"
         })

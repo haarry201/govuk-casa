@@ -17,14 +17,59 @@ export default () => {
 
     plan.setRoute(
         "morning-mode",
-        "car-size",
+        "commute-car-size",
         (r,c) => c.data["morning-mode"].morningMode == 'car',
     );
     plan.setRoute(
         "morning-mode",
-        "return",
+        "same-return",
         (r,c) => c.data["morning-mode"].morningMode != 'car',
     );
+
+    plan.setRoute(
+        "same-return",
+        "commute-distance",
+        (r,c) => c.data["same-return"].sameReturn == 'yes',
+    );
+    plan.setRoute(
+        "same-return",
+        "evening-mode",
+        (r,c) => c.data["same-return"].sameReturn == 'no',
+    );
+
+    plan.setRoute("evening-mode", "commute-distance");
+
+    plan.setRoute("commute-car-size", "commute-car-fuel");
+    plan.setRoute("commute-car-fuel", "commute-distance");
+
+    plan.setRoute("commute-distance", "btravel-frequency");
+
+    plan.setRoute(
+        "btravel-frequency",
+        "btravel-mode",
+        (r,c) => c.data["btravel-frequency"].btravelFrequency > 0,
+    );
+    plan.setRoute(
+        "btravel-frequency",
+        "check-answers",
+        (r,c) => c.data["btravel-frequency"].btravelFrequency == 0,
+    );
+
+    plan.setRoute(
+        "btravel-mode",
+        "btravel-car-size",
+        (r,c) => c.data["btravel-mode"].btravelMode == 'car',
+    );
+    plan.addSequence("btravel-car-size", "btravel-car-fuel", "btravel-distance");
+
+    plan.setRoute(
+        "btravel-mode",
+        "btravel-distance",
+        (r,c) => c.data["btravel-mode"].btravelMode != 'car',
+    );
+
+    plan.addSequence("btravel-distance", "check-answers", "results");
+
 
 
     return plan;

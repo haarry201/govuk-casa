@@ -13,28 +13,36 @@
     </h1>
 
   {{ casaGovukRadios({
-    name: 'carSize',
-    casaValue: formData.carSize,
+    name: 'commuteCarFuel',
+    casaValue: formData.commuteCarFuel,
     casaErrors: formErrors,
     fieldset: {
         legend: {
-        text: 'What size car do you use?',
+        text: 'What type of fuel does your car use?',
         isPageHeading: true,
         classes: 'govuk-fieldset__legend--m'
         }
     },
     items: [
       {
-        value: 'small',
-        text: "Small"
+        value: 'petrol',
+        text: 'Petrol'
       },
       {
-        value: 'medium',
-        text: "Medium"
+        value: 'diesel',
+        text: 'Diesel'
       },
       {
-        value: 'large',
-        text: "Large"
+        value: 'ev',
+        text: 'Electricity'
+      },
+      {
+        value: 'hybrid',
+        text: 'Hybrid'
+      },
+      {
+        value: 'plugInHybrid',
+        text: 'Plug in hybrid'
       }
     ]
   }) }}

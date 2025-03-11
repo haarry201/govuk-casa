@@ -1,0 +1,43 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
+
+{% block casaPageTitle %}
+  {{ t('Commuting:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Commuting') }}
+    </h1>
+
+  {{ casaGovukRadios({
+    name: 'commuteCarSize',
+    casaValue: formData.commuteCarSize,
+    casaErrors: formErrors,
+    fieldset: {
+        legend: {
+        text: 'What size car do you use?',
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+    },
+    items: [
+      {
+        value: 'small',
+        text: "Small"
+      },
+      {
+        value: 'medium',
+        text: "Medium"
+      },
+      {
+        value: 'large',
+        text: "Large"
+      }
+    ]
+  }) }}
+
+
+{% endblock %}

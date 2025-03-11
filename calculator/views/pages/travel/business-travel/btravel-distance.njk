@@ -1,0 +1,29 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/input/macro.njk" import casaGovukInput with context %}
+
+{% block casaPageTitle %}
+  {{ t('Business travel:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Business travel') }}
+    </h1>
+
+  {{ casaGovukInput({
+    name: 'btravelDistance',
+    casaValue: formData.btravelDistance,
+    label: {
+      text: "How far do you travel in miles?",
+      classes: 'govuk-label--m'
+    },
+    hint: {
+        text: "One way, on an average journey. Must be a whole number"
+    },
+    classes: 'govuk-!-width-one-half',
+    casaErrors: formErrors
+  }) }}
+
+{% endblock %}
