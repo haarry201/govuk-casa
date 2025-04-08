@@ -37,7 +37,16 @@ export default () => {
         (r,c) => c.data["same-return"].sameReturn == 'no',
     );
 
-    plan.setRoute("evening-mode", "commute-distance");
+    plan.setRoute(
+        "evening-mode",
+        "commute-car-size",
+        (r,c) => c.data["evening-mode"].eveningMode == 'carshare',
+    );
+    plan.setRoute(
+        "evening-mode",
+        "commute-distance",
+        (r,c) => c.data["evening-mode"].eveningMode != 'carshare',
+    );
 
     plan.setRoute("commute-car-size", "commute-car-fuel");
     plan.setRoute("commute-car-fuel", "commute-distance");
@@ -51,7 +60,7 @@ export default () => {
     );
     plan.setRoute(
         "btravel-frequency",
-        "check-answers",
+        "summary",
         (r,c) => c.data["btravel-frequency"].btravelFrequency == 0,
     );
 
@@ -68,7 +77,7 @@ export default () => {
         (r,c) => c.data["btravel-mode"].btravelMode != 'car',
     );
 
-    plan.addSequence("btravel-distance", "check-answers", "results");
+    plan.addSequence("btravel-distance", "summary");
 
 
 

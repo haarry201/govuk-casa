@@ -1,0 +1,123 @@
+{
+    "deviceFactors": {
+      "desktop": {
+        "embodied": 221,
+        "usagePerYear": 41.415
+      },
+      "laptop": {
+        "macbook": 394,
+        "windows": 341
+      },
+      "phone": {
+        "iphone": 46,
+        "android": 56.5
+      },
+      "monitor": 465
+    },
+    "emailFactors": {
+      "email": 0.0003,
+      "emailAttachment": 0.05
+    },
+    "transportFactors": {
+      "car": {
+        "small": {
+          "petrol": 0.23126,
+          "diesel": 0.22522,
+          "electric": 0.00,
+          "hybrid": 0.18143,
+          "plugInHybrid": 0.04848
+        },
+        "medium": {
+          "petrol": 0.28526,
+          "diesel": 0.27050,
+          "electric": 0.00,
+          "hybrid": 0.18492,
+          "plugInHybrid": 0.13066
+        },
+        "large": {
+          "petrol": 0.43267,
+          "diesel": 0.33362,
+          "electric": 0.00,
+          "hybrid": 0.24921,
+          "plugInHybrid": 0.16506
+        }
+      },
+      "bus": 0.10846,
+      "train": 0.03546,
+      "walk": 0.0,
+      "bike": 0.0,
+      "tram": 0.0273403
+    },
+    "messageFactors": {
+      "messages": 0.000056,
+      "videoCalls": 0.15734,
+      "sometimesVideoCalls": 0.081315,
+      "audioCalls": 0.00629
+    },
+    "printingFactors": {
+      "perPage": 0.006
+    },
+    "workingPatternsFactors": {
+      "office": 0,
+      "home": 0
+    },
+    "cloudStorageFactors": {
+      "gbGramsPerHour": 1.449518,
+      "oneDriveClearedMonthly": 0.8
+    },
+    "drivingDistances": {
+      "600": "Geneva, Switzerland",
+      "700": "Munich, Germany",
+      "800": "Salzburg, Austria",
+      "900": "Venice, Italy",
+      "1000": "Barcelona, Spain",
+      "1100": "Oslo, Norway",
+      "1200": "Rome, Italy",
+      "1300": "Vilnius, Lithuania",
+      "1400": "Riga, Latvia",
+      "1500": "Algiers, Algeria",
+      "1600": "Tallinn, Estonia",
+      "1700": "Thessaloniki, Greece",
+      "1800": "Kharkiv, Ukraine",
+      "1900": "Marrakesh, Morrocco",
+      "2000": "Athens, Greece",
+      "2100": "Ankara, Türkiye"
+    },
+    "emailCheckAnswers": {
+      "10": "0 to 19 per week",
+      "35": "20 to 49 per week",
+      "75": "50 to 100 per week",
+      "125": "more than 100 per week"
+    },
+    "teamsCheckAnswers": {
+      "25": "0 to 49 per week",
+      "75": "50 to 99 per week",
+      "125": "100 to 149 per week",
+      "175": "more than 150 per week",
+      "2.5": "0 to 5 hours per week",
+      "7.5": "6 to 10 hours per week",
+      "12.5": "11 to 15 hours per week",
+      "17.5": "more than 15 hours per week"
+    },
+    "clearCheckAnswers": {
+      "0.25": "weekly or less",
+      "1": "monthly",
+      "3": "quarterly",
+      "12": "yearly",
+      "36": "never"
+    },
+    "printingCheckAnswers": {
+      "0": "none",
+      "15": "1 to 30 pages per week",
+      "45": "31 to 60 pages per week",
+      "80": "61 to 100 pages per week",
+      "120": "more than 100 pages per week"
+    },
+    "businessTravelCheckAnswers": {
+      "12.5": "0 to 25 miles",
+      "37.5": "25 to 50 miles",
+      "75": "50 to 100 miles",
+      "175": "100 to 250 miles",
+      "300": "more than 250 miles"
+    }
+}

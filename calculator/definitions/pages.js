@@ -27,66 +27,68 @@ import btravelCarFuelFields from "./fields/travel/business-travel/btravel-car-fu
 import btravelDistanceFields from "./fields/travel/business-travel/btravel-distance.js"
 
 
+import { CalculateEmissionsMiddleware } from './middleware/calculateEmissionsMiddleware.js'
+
 export default () => [
     {
         waypoint: "laptop",
         view: "pages/devices/laptop.njk",
-        //fields: laptopFields()
+        fields: laptopFields()
     },
     {
         waypoint: "desktop",
         view: "pages/devices/desktop.njk",
-        //fields: desktopFields()
+        fields: desktopFields()
     },
     {
         waypoint: "monitors",
         view: "pages/devices/monitors.njk",
-        //fields: monitorsFields()
+        fields: monitorsFields()
     },
     {
         waypoint: "phone",
         view: "pages/devices/phone.njk",
-        //fields: phoneFields()
+        fields: phoneFields()
     },
     {
         waypoint: "emails",
         view: "pages/messaging/emails.njk",
-        //fields: emailsFields()
+        fields: emailsFields()
     },
     {
         waypoint: "emails-attachments",
         view: "pages/messaging/emails-attachments.njk",
-        //fields: emailsAttachmentsFields()
+        fields: emailsAttachmentsFields()
     },
     {
         waypoint: "instant-messages",
         view: "pages/messaging/instant-messages.njk",
-        //fields: instantMessagesFields()
+        fields: instantMessagesFields()
     },
     {
         waypoint: "calls",
         view: "pages/messaging/calls.njk",
-        //fields: callsFields()
+        fields: callsFields()
     },
     {
         waypoint: "camera",
         view: "pages/messaging/camera.njk",
-        //fields: cameraFields()
+        fields: cameraFields()
     },
     {
         waypoint: "email-storage",
         view: "pages/data-storage/email-storage.njk",
-        //fields: emailStorageFields()
+        fields: emailStorageFields()
     },
     {
         waypoint: "onedrive-storage",
         view: "pages/data-storage/onedrive-storage.njk",
-        //fields: onedriveStorageFields()
+        fields: onedriveStorageFields()
     },
     {
         waypoint: "printing",
         view: "pages/data-storage/printing.njk",
-        //fields: printingFields()
+        fields: printingFields()
     },
     {
         waypoint: "commute-frequency",
@@ -147,5 +149,28 @@ export default () => [
         waypoint: "btravel-distance",
         view: "pages/travel/business-travel/btravel-distance.njk",
         fields: btravelDistanceFields()
+    },
+    {
+        waypoint: "summary",
+        view: "pages/summary.njk",
+        hooks: [
+            {
+                hook: "prerender",
+                // middleware: (req, res, next) => {
+
+                //     const exampleVariable = 'beepboop';
+                //     //console.log('LOGGED')
+                //     res.locals = {
+                //         ...res.locals,
+                //         casa: {
+                //             ...res.locals.casa,
+                //         },
+                //         exampleVariable,
+                //     }
+                //     next();
+                // },
+                middleware: CalculateEmissionsMiddleware()
+            }
+        ]
     }
 ];

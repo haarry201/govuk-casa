@@ -1,0 +1,124 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+{% block casaPageTitle %}
+  {{ t('Summary:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('Your estimated emissions for 2024/25') }}
+    </h1>
+
+    {% set yearlyEmissions %}
+    {{ govukPanel({
+      titleText: laptopYearlyEmissions,
+      html: "Your reference number<br><strong>HDJ2123F</strong>"
+    }) }}
+
+    {{ govukTable({
+      caption: "Dates and amounts",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Date"
+        },
+        {
+          text: "Amount"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Devices"
+          },
+          {
+            text: deviceYearlyEmissions
+          }
+        ],
+        [
+          {
+            text: "Messaging"
+          },
+          {
+            text: messagingYearlyEmissions
+          }
+        ],
+        [
+          {
+            text: "Commuting"
+          },
+          {
+            text: commutingYearlyEmissions
+          }
+        ],
+        [
+          {
+            text: "x"
+          },
+          {
+            text: 'x'
+          }
+        ],
+        [
+          {
+            text: "x"
+          },
+          {
+            text: 'x'
+          }
+        ],
+        [
+          {
+            text: "x"
+          },
+          {
+            text: 'x'
+          }
+        ],
+        [
+          {
+            text: "x"
+          },
+          {
+            text: 'x'
+          }
+        ]
+      ]
+    }) }}
+
+
+    {% endset %}
+
+    {% set monthlyEmissions %}
+
+    {% endset %}
+
+    {{ govukTabs({
+      items: [
+        {
+          label: "Yearly",
+          id: "yearly",
+          panel: {
+            html: yearlyEmissions
+          }
+        },
+        {
+          label: "Monthly",
+          id: "monthly",
+          panel: {
+            html: monthlyEmissions
+          }
+        }
+      ]
+    }) }}
+
+
+
+{% endblock %}
