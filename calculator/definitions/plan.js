@@ -56,28 +56,28 @@ export default () => {
     plan.setRoute(
         "btravel-frequency",
         "btravel-mode",
-        (r,c) => c.data["btravel-frequency"].btravelFrequency > 0,
+        (r,c) => c.data["btravel-frequency"].bTravelFrequency > 0,
     );
     plan.setRoute(
         "btravel-frequency",
-        "summary",
-        (r,c) => c.data["btravel-frequency"].btravelFrequency == 0,
+        "review",
+        (r,c) => c.data["btravel-frequency"].bTravelFrequency == 0,
     );
 
     plan.setRoute(
         "btravel-mode",
         "btravel-car-size",
-        (r,c) => c.data["btravel-mode"].btravelMode == 'car',
+        (r,c) => c.data["btravel-mode"].bTravelMode == 'car',
     );
     plan.addSequence("btravel-car-size", "btravel-car-fuel", "btravel-distance");
 
     plan.setRoute(
         "btravel-mode",
         "btravel-distance",
-        (r,c) => c.data["btravel-mode"].btravelMode != 'car',
+        (r,c) => c.data["btravel-mode"].bTravelMode != 'car',
     );
 
-    plan.addSequence("btravel-distance", "summary");
+    plan.addSequence("btravel-distance", "review", "summary");
 
 
 

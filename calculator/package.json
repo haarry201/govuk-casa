@@ -9,7 +9,8 @@
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
-        "devStart": "nodemon server.js"
+        "devStart": "nodemon server.js",
+        "compile:sass": "sass ./assets/application.scss"
     },
     "dependencies": {
         "@dwp/govuk-casa": "^9.0.0",

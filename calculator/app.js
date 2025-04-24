@@ -8,6 +8,8 @@ import planFactory from "./definitions/plan.js"
 import { configure } from '@dwp/govuk-casa';
 import { fileURLToPath } from "url";
 
+import checkYourAnswersPlugin from "./plugins/check-your-answers/plugin.js";
+
 const { static: expressStatic } = ExpressJS;
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -22,15 +24,24 @@ const application = ({ MOUNT_URL = "/" }) => {
             ttl: 3600,
             secure: false,
         },
+        plugins: [
+            checkYourAnswersPlugin({
+              waypoints: ["review"],
+            }),
+          ],
         pages: pages(),
         plan
     });
+
+
 
     const casaApp = ExpressJS();
     mount(casaApp);
 
     const app = ExpressJS();
     app.use(MOUNT_URL, casaApp);
+
+    app.use(ExpressJS.static('assets'));
 
     return app;
 }
