@@ -1,0 +1,410 @@
+{% extends "layouts/main.njk" %}
+
+ {% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% block casaPageTitle %}
+  {{ t('how-we-calculate:pageTitle') }}
+{% endblock %}
+
+
+
+{% block content %}
+    <a href="/calculator/summary" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-l">
+    {{ t('how-we-calculate:h1') }}
+    </h1>
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        How do we calculate your emissions?
+      </h1>
+
+      <p class="govuk-body">
+        We take emission factors (carbon emitted per unit of activity) from various sources listed below.
+        These emission factors are then used to calculate your emissions depending on how you answer the questions.
+      </p>
+
+
+      {{ govukTable({
+        caption: "Device emissions",
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Device"
+          },
+          {
+            text: "Carbon Footprint over lifespan"
+          },
+          {
+            text: "Lifespan"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "MacBook"
+            },
+            {
+              text: "394 kg CO2e"
+            },
+            {
+              text: "5 Years"
+            }
+          ],
+          [
+            {
+              text: "Windows Laptop"
+            },
+            {
+              text: "341 kg CO2e"
+            },
+            {
+              text: "5 Years"
+            }
+          ],
+          [
+            {
+              text: "Desktop"
+            },
+            {
+              text: "463 kg CO2e"
+            },
+            {
+              text: "7 Years"
+            }
+          ],
+          [
+            {
+              text: "Monitor"
+            },
+            {
+              text: "465 kg CO2e"
+            },
+            {
+              text: "5 Years"
+            }
+          ],
+          [
+            {
+              text: "Android Phone"
+            },
+            {
+              text: "52 kg CO2e"
+            },
+            {
+              text: "4 years"
+            }
+          ],
+          [
+            {
+              text: "iPhone SE"
+            },
+            {
+              text: "46 kg CO2e"
+            },
+            {
+              text: "3-4 Years"
+            }
+          ]
+        ]
+      }) }}
+
+      <h1 class="govuk-heading-m">
+        Sources
+      </h1>
+      <p class="govuk-body">
+        The carbon footprint for Macbooks is assuming a 2019 MacBook Pro 16 inch, with emission factors listed 
+        <a href="https://www.apple.com/environment/pdf/products/notebooks/16-inch_MacBookPro_PER_Nov2019.pdf" 
+        class="govuk-link" rel="noreferrer noopener" target="_blank">in this report from Apple (2019)</a>.
+      </p>
+      <p class="govuk-body">
+        The carbon footprint for Windows laptops is assuming a Dell Latitude 5330, with emission factors listed
+        <a href="https://www.delltechnologies.com/asset/en-us/products/laptops-and-2-in-1s/technical-support/dell-latitude-5330-pcf-datasheet.pdf" 
+        class="govuk-link" rel="noreferrer noopener" target="_blank">in this report from Dell (2022)</a>.
+      </p>
+      <p class="govuk-body">
+        The carbpn footprint for monitors assumes a HP Z23n, with emission factors listed
+        <a href="https://h20195.www2.hp.com/v2/getpdf.aspx/c07524750.pdf" 
+        class="govuk-link" rel="noreferrer noopener" target="_blank">in this report from HP (2017)</a>.
+      </p>
+      <p class="govuk-body">
+        The carbpn footprint for iPhones assumes an iPhone SE, with emission factors listed
+        <a href="https://www.apple.com/environment/pdf/products/iphone/iPhone_SE_PER_March2022.pdf" 
+        class="govuk-link" rel="noreferrer noopener" target="_blank">in this report from Apple (2022)</a>.
+      </p>
+
+
+      {{ govukTable({
+        caption: "Messaging emissions",
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: true,
+        rows: [
+          [
+            {
+              text: "Teams"
+            },
+            {
+              text: "0.000056 kg of CO2e per message"
+            }
+          ],
+          [
+            {
+              text: " "
+            },
+            {
+              text: "0.15734 kg of CO2e per hour on call with video on"
+            }
+          ],
+          [
+            {
+              text: " "
+            },
+            {
+              text: "0.00629 kg of CO2e per hour on call with video off"
+            }
+          ],
+          [
+            {
+              text: "Emails"
+            },
+            {
+              text: "0.0003 kg of CO2e per email"
+            }
+          ],
+          [
+            {
+              text: " "
+            },
+            {
+              text: "0.050 kg of CO2e per email with attachment"
+            }
+          ]
+        ]
+      }) }}
+
+      <h1 class="govuk-heading-m">
+        Sources
+      </h1>
+      <p class="govuk-body">
+        The emission factor for sending teams messages is from the following research done by Greenspector:
+        <a href="https://greenspector.com/en/direct-messaging-business-apps/" 
+        class="govuk-link" rel="noreferrer noopener" target="_blank">Digital sobriety comparison of 3 direct messaging apps for business (Greenspector)</a>
+      </p>
+      <p class="govuk-body">
+        The emission factors for video conferencing (with video on/off) were obtained from the following research paper: 
+        <a href="https://www.sciencedirect.com/science/article/pii/S0921344920307072?via%3Dihub" 
+        class="govuk-link" rel="noreferrer noopener" target="_blank">The overlooked environmental footprint of increasing Internet use (ScienceDirect)</a> 
+      </p>
+      <br>
+      <p class="govuk-body">
+        The emission factors for sending an email (with/without attachment) is from the book 'How Bad Are Bananas? The Carbon Footprint of Everything' by Mike Berners-Lee (ISBN:9781788163811)
+      </p>
+
+      {{ govukTable({
+        caption: "Data storage emissions",
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: true,
+        rows: [
+          [
+            {
+              text: "Printing"
+            },
+            {
+              text: "0.006 kg of CO2e per page"
+            }
+          ]
+        ]
+      }) }}
+
+      {{ govukTable({
+        caption: "Travel emissions",
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Mode of Transport"
+          },
+          {
+            text: "Carbon per Mile"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Bus"
+            },
+            {
+              text: "0.108 kg CO2e"
+            }
+          ],
+          [
+            {
+              text: "Train"
+            },
+            {
+              text: "0.0355 kg CO2e"
+            }
+          ],
+          [
+            {
+              text: "Bicycle/Foot"
+            },
+            {
+              text: "0.00 kg CO2e"
+            }
+          ],
+          [
+            {
+              text: "Tram/Tube"
+            },
+            {
+              text: "0.0273 kg CO2e"
+            }
+          ]
+        ]
+      }) }}
+
+      <h1 class="govuk-heading-m">
+        Sources
+      </h1>      
+      <p class="govuk-body">
+        The emission factors for buses and trains can be found in the following UK Government guidelines:
+        <a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024" 
+        class="govuk-link" rel="noreferrer noopener" target="_blank">Greenhouse gas reporting: conversion factors 2024</a>.
+      </p>
+      <p class="govuk-body">
+        The emission factor for tram/tube is provided here by Transport for London:
+        <a href="https://tfl.gov.uk/corporate/transparency/freedom-of-information/foi-request-detail?referenceId=FOI-0354-2021" 
+        class="govuk-link" rel="noreferrer noopener" target="_blank">FOI request detail: Carbon footprint of a tube journey</a>.
+      </p>
+
+
+    
+
+      {{ govukTable({
+        caption: "Car emissions in kg of CO2e",
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: ""
+          },
+          {
+            text: "Small",
+            format: "numeric"
+          },
+          {
+            text: "Medium",
+            format: "numeric"
+          },
+          {
+            text: "Large",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Petrol"
+            },
+            {
+              text: "0.23126",
+              format: "numeric"
+            },
+            {
+              text: "0.28526",
+              format: "numeric"
+            },
+            {
+              text: "0.43267",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Diesel"
+            },
+            {
+              text: "0.22522",
+              format: "numeric"
+            },
+            {
+              text: "0.27050",
+              format: "numeric"
+            },
+            {
+              text: "0.33362",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Electric"
+            },
+            {
+              text: "0.00",
+              format: "numeric"
+            },
+            {
+              text: "0.00",
+              format: "numeric"
+            },
+            {
+              text: "0.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Hybrid"
+            },
+            {
+              text: "0.18143",
+              format: "numeric"
+            },
+            {
+              text: "0.18492",
+              format: "numeric"
+            },
+            {
+              text: "0.24921",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Plug in Hybrid"
+            },
+            {
+              text: "0.04848",
+              format: "numeric"
+            },
+            {
+              text: "0.13066",
+              format: "numeric"
+            },
+            {
+              text: "0.16506",
+              format: "numeric"
+            }
+          ]
+        ]
+      }) }}
+
+
+
+
+      <p class="govuk-body">
+        The emission factors for cars can be found in the following UK Government guidelines:
+        <a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024" 
+        class="govuk-link" rel="noreferrer noopener" target="_blank">Greenhouse gas reporting: conversion factors 2024</a>.
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

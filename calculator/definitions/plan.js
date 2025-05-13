@@ -77,7 +77,9 @@ export default () => {
         (r,c) => c.data["btravel-mode"].bTravelMode != 'car',
     );
 
-    plan.addSequence("btravel-distance", "review", "summary");
+    plan.addSequence("btravel-distance", "review", "summary", "how-we-calculate");
+
+    plan.addSkippables("summary", "how-we-calculate");
 
 
 

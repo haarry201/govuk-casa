@@ -181,5 +181,9 @@ export default () => [
                 middleware: CalculateEmissionsMiddleware()
             }
         ]
+    },
+    {
+        waypoint: "how-we-calculate",
+        view: "pages/how-we-calculate.njk"
     }
 ];

@@ -1,4 +1,4 @@
-{% extends "layouts/journey.njk" %}
+{% extends "layouts/main.njk" %}
 
 {% from "govuk/components/panel/macro.njk" import govukPanel %}
 {% from "govuk/components/tabs/macro.njk" import govukTabs %}
@@ -11,7 +11,9 @@
 {% endblock %}
 
 
-{% block journey_form %}
+{% block content %}
+    <a href="/calculator/review" class="govuk-back-link">Back</a>
+
     <h1 class="govuk-heading-l">
     {{ t('Your estimated emissions for 2024/25') }}
     </h1>
@@ -110,6 +112,11 @@
     <div id="persona-description" class="govuk-body">{{personaDescription}}</div>
     <div class="govuk-heading-s">How you can improve</div>
     <div id="persona-improvements" class="govuk-body">{{personaImprovements}}</div>
+
+
+    <p class="govuk-body">
+      See <a href='{{ waypointUrl({ waypoint: casa.waypoint, skipTo: 'how-we-calculate' }) }}' class="govuk-link">how we calculate these emissions</a>.
+    </p>
 
 
     {% endset %}
