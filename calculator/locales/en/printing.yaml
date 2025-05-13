@@ -1,0 +1,12 @@
+pageTitle: Printing
+h1: Storing data
+field:
+  printing:
+    label: How many pages do you print in a week?
+    empty: Please make a selection
+    options:
+      0: None
+      15: 1 to 30
+      45: 31 to 60
+      80: 61 to 100
+      150: More than 100

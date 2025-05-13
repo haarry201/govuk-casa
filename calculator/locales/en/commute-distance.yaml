@@ -1,0 +1,8 @@
+pageTitle: Commute distance
+h1: Commuting
+field:
+  commuteDistance:
+    label: How far do you travel in miles?
+    empty: Please make a selection
+    options:
+      {{ commuteDistance }}: {{ commuteDistance }}

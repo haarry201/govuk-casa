@@ -1,0 +1,13 @@
+pageTitle: OneDrive storage
+h1: Storing data
+field:
+  onedriveStorage:
+    label: How often do you delete OneDrive files?
+    empty: Please make a selection
+    options:
+      0.0333: Daily
+      0.25: Weekly
+      1: Monthly
+      3: Quarterly
+      12: Yearly
+      36: Never

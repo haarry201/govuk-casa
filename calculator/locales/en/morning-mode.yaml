@@ -1,0 +1,15 @@
+pageTitle: Morning mode
+h1: Commuting
+field:
+  morningMode:
+    label: How do you get to work?
+    empty: Please make a selection
+    options:
+      walk: Walking or wheeling
+      bike: Bike
+      bus: Bus
+      train: Train
+      car: Car
+      carShare: Car share
+      tram: Tram or Tube
+

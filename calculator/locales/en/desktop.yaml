@@ -1,0 +1,11 @@
+pageTitle: Desktop
+h1: Devices
+field:
+  desktop:
+    label: Do you have a desktop
+    empty: Please make a selection
+    options:
+      yes: Yes
+      no: No
+
+

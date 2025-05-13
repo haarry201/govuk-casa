@@ -1,0 +1,15 @@
+pageTitle: Commute frequency
+h1: Commuting
+field:
+  commuteFrequency:
+    label: How many days do you travel to work in a week?
+    empty: Please make a selection
+    options:
+      0: 0
+      1: 1
+      2: 2
+      3: 3
+      4: 4
+      5: 5
+      6: 6
+      7: 7

@@ -29,6 +29,10 @@ const application = ({ MOUNT_URL = "/" }) => {
               waypoints: ["review"],
             }),
           ],
+        i18n: {
+          dirs: [resolve(__dirname, "locales")],
+          locales: ["en"],
+        },
         pages: pages(),
         plan
     });

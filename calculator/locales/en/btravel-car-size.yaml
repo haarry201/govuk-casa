@@ -1,0 +1,10 @@
+pageTitle: Business travel car size
+h1: Business travel
+field:
+  bTravelCarSize:
+    label: What size car do you use?
+    empty: Please make a selection
+    options:
+      small: Small
+      medium: Medium
+      large: Large

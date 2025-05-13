@@ -1,0 +1,11 @@
+pageTitle: Monitors
+h1: Devices
+field:
+  monitors:
+    label: Number of monitors
+    empty: Please make a selection
+    options:
+      0: 0
+      1: 1
+      2: 2
+      3: 3

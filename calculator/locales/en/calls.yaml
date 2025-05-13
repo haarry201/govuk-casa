@@ -1,0 +1,12 @@
+pageTitle: Calls
+h1: Calls and messaging
+field:
+  calls:
+    label: Hours spent in calls
+    empty: Please make a selection
+    options:
+      0: None
+      3: 1 to 5
+      8: 6 to 10
+      13: 11 to 15
+      20: More than 15

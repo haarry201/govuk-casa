@@ -1,0 +1,12 @@
+pageTitle: Instant messages
+h1: Calls and messaging
+field:
+  instantMessages:
+    label: Number of instant messages
+    empty: Please make a selection
+    options:
+      0: None
+      25: 1 to 49
+      75: 50 to 99
+      125: 100 to 149
+      200: More than 150

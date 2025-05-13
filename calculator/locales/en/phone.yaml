@@ -1,0 +1,10 @@
+pageTitle: Phone
+h1: Devices
+field:
+  phone:
+    label: Phone type
+    empty: Please make a selection
+    options:
+      android: Android
+      iphone: iPhone
+      no: I don't have a work phone

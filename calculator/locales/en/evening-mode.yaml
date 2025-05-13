@@ -1,0 +1,14 @@
+pageTitle: Evening mode
+h1: Commuting
+field:
+  eveningMode:
+    label: How do you return from work?
+    empty: Please make a selection
+    options:
+      walk: Walking or wheeling
+      bike: Bike
+      bus: Bus
+      train: Train
+      carShare: Car share
+      tram: Tram or Tube
+

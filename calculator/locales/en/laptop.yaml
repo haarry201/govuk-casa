@@ -1,0 +1,10 @@
+pageTitle: Laptop
+h1: Devices
+field:
+  laptop:
+    label: Laptop type
+    empty: Please make a selection
+    options:
+      windows: Windows
+      macbook: MacBook
+      no: I don't use a laptop

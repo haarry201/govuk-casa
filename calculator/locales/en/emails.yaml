@@ -1,0 +1,12 @@
+pageTitle: Emails
+h1: Emails
+field:
+  emails:
+    label: Number of emails
+    empty: Please make a selection
+    options:
+      0: None
+      10: 1 to 19
+      35: 20 to 49
+      75: 50 to 100
+      150: More than 100
