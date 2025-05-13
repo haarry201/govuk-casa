@@ -2,7 +2,7 @@ import { Plan } from "@dwp/govuk-casa";
 
 export default () => {
     const plan = new Plan({})
-    plan.addSequence("laptop", "desktop", "monitors", "phone", "emails", "emails-attachments", "instant-messages", "calls", "camera", "email-storage", "onedrive-storage", "printing", "commute-frequency");
+    plan.addSequence("laptop", "desktop", "monitors", "phone", "emails", "emails-attachments", "instant-messages", "calls", "camera", "email-storage", "onedrive-storage", "printing", "ai", "commute-frequency");
 
     plan.setRoute(
         "commute-frequency",

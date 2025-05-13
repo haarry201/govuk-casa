@@ -13,6 +13,8 @@ import emailStorageFields from "./fields/data-storage/email-storage.js"
 import onedriveStorageFields from "./fields/data-storage/onedrive-storage.js"
 import printingFields from "./fields/data-storage/printing.js"
 
+import aiFields from "./fields/ai.js"
+
 import commuteFrequencyFields from "./fields/travel/commuting/commute-frequency.js"
 import morningModeFields from "./fields/travel/commuting/morning-mode.js"
 import btravelFrequencyFields from "./fields/travel/business-travel/btravel-frequency.js"
@@ -25,6 +27,8 @@ import btravelModeFields from "./fields/travel/business-travel/btravel-mode.js"
 import btravelCarSizeFields from "./fields/travel/business-travel/btravel-car-size.js"
 import btravelCarFuelFields from "./fields/travel/business-travel/btravel-car-fuel.js"
 import btravelDistanceFields from "./fields/travel/business-travel/btravel-distance.js"
+
+
 
 
 import { CalculateEmissionsMiddleware } from './middleware/calculateEmissionsMiddleware.js'
@@ -89,6 +93,11 @@ export default () => [
         waypoint: "printing",
         view: "pages/data-storage/printing.njk",
         fields: printingFields()
+    },
+    {
+        waypoint: "ai",
+        view: "pages/ai.njk",
+        fields: aiFields()
     },
     {
         waypoint: "commute-frequency",

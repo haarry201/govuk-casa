@@ -1,0 +1,14 @@
+pageTitle: AI
+h1: AI
+field:
+  ai:
+    label: How do you use AI?
+    empty: Please make a selection
+    options:
+      aiEmails: Writing emails
+      aiIdeas: To generate ideas
+      aiTranscript: Meeting transcription
+      aiSummarise: Summarising documents
+      aiImages: Generating graphics/images
+      aiSearch: As a replacement for google search
+      aiNo: I don't use AI

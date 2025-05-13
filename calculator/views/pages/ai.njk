@@ -1,0 +1,57 @@
+{% extends "layouts/journey.njk" %}
+
+{% from "casa/components/checkboxes/macro.njk" import casaGovukCheckboxes with context %}
+
+{% block casaPageTitle %}
+  {{ t('ai:pageTitle') }}
+{% endblock %}
+
+
+{% block journey_form %}
+    <h1 class="govuk-heading-l">
+    {{ t('ai:h1') }}
+    </h1>
+
+  {{ casaGovukCheckboxes({
+    name: "ai",
+    casaErrors: formErrors,
+    casaValue: formData.ai,
+    fieldset: {
+      legend: {
+        text: t('How do you use AI?'),
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      text: t('Select all that apply')
+    },
+    items: [{
+      value: "aiEmails",
+      text: t('Writing emails')
+    }, {
+      value: "aiIdeas",
+      text: t('To generate ideas')
+    }, {
+      value: "aiTranscript",
+      text: t('Meeting transcription')
+    }, {
+      value: "aiSummarise",
+      text: t('Summarising documents')
+    }, {
+      value: "aiImages",
+      text: t('Generating graphics/images')
+    }, {
+      value: "aiSearch",
+      text: t('As a replacement for google search')
+    },
+    {
+        divider: "or"
+    }, {
+      value: "aiNo",
+      text: t("I don't use AI")
+    }]
+  }) }}
+
+
+{% endblock %}
