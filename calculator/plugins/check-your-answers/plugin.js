@@ -56,7 +56,8 @@ export default ({ waypoints = ["check-your-answers"] }) => {
                       },
                       value: {
                         text: stringify(
-                          req.casa.journeyContext.data?.[wp]?.[field.name],
+                          req.t(`${slug(wp)}:field.${field.name}.options.` + req.casa.journeyContext.data?.[wp]?.[field.name])
+                          ,
                         ),
                       },
                       actions: {
