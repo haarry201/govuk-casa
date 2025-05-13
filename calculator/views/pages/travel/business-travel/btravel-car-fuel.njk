@@ -3,13 +3,13 @@
 {% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
 
 {% block casaPageTitle %}
-  {{ t('Business travel:pageTitle') }}
+  {{ t('btravel-car-fuel::pageTitle') }}
 {% endblock %}
 
 
 {% block journey_form %}
     <h1 class="govuk-heading-l">
-    {{ t('Business travel') }}
+    {{ t('btravel-car-fuel:h1') }}
     </h1>
 
   {{ casaGovukRadios({
@@ -33,7 +33,7 @@
         text: 'Diesel'
       },
       {
-        value: 'ev',
+        value: 'electric',
         text: 'Electricity'
       },
       {
@@ -42,7 +42,7 @@
       },
       {
         value: 'plugInHybrid',
-        text: 'Plug in hybrid'
+        text: 'Plug in hybrid electric vehicle (PHEV)'
       }
     ]
   }) }}

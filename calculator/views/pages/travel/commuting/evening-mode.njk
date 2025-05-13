@@ -3,13 +3,13 @@
 {% from "casa/components/radios/macro.njk" import casaGovukRadios with context %}
 
 {% block casaPageTitle %}
-  {{ t('Commuting:pageTitle') }}
+  {{ t('evening-mode:pageTitle') }}
 {% endblock %}
 
 
 {% block journey_form %}
     <h1 class="govuk-heading-l">
-    {{ t('Commuting') }}
+    {{ t('evening-mode:h1') }}
     </h1>
 
   {{ casaGovukRadios({
@@ -26,7 +26,7 @@
     items: [
       {
         value: 'walk',
-        text: 'Walk/wheeling/self-propelled'
+        text: 'Walking or wheeling'
       },
       {
         value: 'bike',
@@ -41,12 +41,12 @@
         text: "Train"
       },
       {
-        value: 'carshare',
+        value: 'carShare',
         text: "Car share"
       },
       {
         value: 'tram',
-        text: "Tram or tube"
+        text: "Tram or Tube"
       }
     ]
   }) }}
