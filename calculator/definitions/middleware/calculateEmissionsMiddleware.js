@@ -187,7 +187,8 @@ const calculateEmissionsMiddleware = () => (req, res, next) => {
     // Only calculate if user commutes 1 or more days a week
     if (commuteFrequency > 0){
         const morningMode = String(morningModePageData.morningMode);
-        const commuteDistance = String(commuteDistancePageData.commuteDistance);
+        // Get commute distance and convert from miles to KM
+        const commuteDistance = +(String(commuteDistancePageData.commuteDistance)) * 1.609344;
         // If user uses a car, get car size and fuel type from relevant pages
         if (morningMode == 'car'){
             commuteCarSize = String(commuteCarSizePageData.commuteCarSize);
@@ -235,13 +236,15 @@ const calculateEmissionsMiddleware = () => (req, res, next) => {
         commutingYearlyEmissions = 0;
     }
 
+
     // Business travel
     let transportFactor, bTravelYearlyEmissions;
     const bTravelFrequency = String(bTravelFrequencyPageData.bTravelFrequency);
 
     if (bTravelFrequency > 0){
         const bTravelMode = String(bTravelModePageData.bTravelMode);
-        const bTravelDistance = String(bTravelDistancePageData.bTravelDistance);
+        // Get business travel distance and convert from miles to KM
+        const bTravelDistance = +(String(bTravelDistancePageData.bTravelDistance)) * 1.609344;
         if (bTravelMode == 'car'){
             const carSize = String(bTravelCarSizePageData.bTravelCarSize);
             const carFuel = String(bTravelCarFuelPageData.bTravelCarFuel);

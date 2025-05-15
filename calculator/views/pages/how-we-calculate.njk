@@ -1,6 +1,6 @@
 {% extends "layouts/main.njk" %}
 
- {% from "govuk/components/table/macro.njk" import govukTable %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
 
 {% block casaPageTitle %}
   {{ t('how-we-calculate:pageTitle') }}
@@ -17,9 +17,6 @@
     <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        How do we calculate your emissions?
-      </h1>
 
       <p class="govuk-body">
         We take emission factors (carbon emitted per unit of activity) from various sources listed below.
@@ -45,7 +42,7 @@
         rows: [
           [
             {
-              text: "MacBook"
+              text: "MacBook (1)"
             },
             {
               text: "394 kg CO2e"
@@ -56,7 +53,7 @@
           ],
           [
             {
-              text: "Windows Laptop"
+              text: "Windows Laptop (2)"
             },
             {
               text: "341 kg CO2e"
@@ -67,7 +64,7 @@
           ],
           [
             {
-              text: "Desktop"
+              text: "Standard Desktop (3)"
             },
             {
               text: "463 kg CO2e"
@@ -78,7 +75,7 @@
           ],
           [
             {
-              text: "Monitor"
+              text: "Monitor (4)"
             },
             {
               text: "465 kg CO2e"
@@ -89,7 +86,7 @@
           ],
           [
             {
-              text: "Android Phone"
+              text: "Android Phone (5)"
             },
             {
               text: "52 kg CO2e"
@@ -100,7 +97,7 @@
           ],
           [
             {
-              text: "iPhone SE"
+              text: "iPhone SE (6)"
             },
             {
               text: "46 kg CO2e"
@@ -116,22 +113,32 @@
         Sources
       </h1>
       <p class="govuk-body">
-        The carbon footprint for Macbooks is assuming a 2019 MacBook Pro 16 inch, with emission factors listed 
+        (1) The carbon footprint for MacBooks is assuming a 2019 MacBook Pro 16 inch, with emission factors listed
         <a href="https://www.apple.com/environment/pdf/products/notebooks/16-inch_MacBookPro_PER_Nov2019.pdf" 
         class="govuk-link" rel="noreferrer noopener" target="_blank">in this report from Apple (2019)</a>.
       </p>
       <p class="govuk-body">
-        The carbon footprint for Windows laptops is assuming a Dell Latitude 5330, with emission factors listed
+        (2) The carbon footprint for Windows laptops is assuming a Dell Latitude 5330, with emission factors listed
         <a href="https://www.delltechnologies.com/asset/en-us/products/laptops-and-2-in-1s/technical-support/dell-latitude-5330-pcf-datasheet.pdf" 
         class="govuk-link" rel="noreferrer noopener" target="_blank">in this report from Dell (2022)</a>.
       </p>
       <p class="govuk-body">
-        The carbpn footprint for monitors assumes a HP Z23n, with emission factors listed
+        (3) The carbon footprint for a Standard Desktop is assuming a ..., with emission factors listed
+        <a href=""
+        class="govuk-link" rel="noreferrer noopener" target="_blank">in this report from ...</a>.
+      </p>
+      <p class="govuk-body">
+        (4) The carbpn footprint for monitors assumes a HP Z23n, with emission factors listed
         <a href="https://h20195.www2.hp.com/v2/getpdf.aspx/c07524750.pdf" 
         class="govuk-link" rel="noreferrer noopener" target="_blank">in this report from HP (2017)</a>.
       </p>
       <p class="govuk-body">
-        The carbpn footprint for iPhones assumes an iPhone SE, with emission factors listed
+        (5) The carbpn footprint for Android Phones assumes a ..., with emission factors listed
+        <a href=""
+        class="govuk-link" rel="noreferrer noopener" target="_blank">in this report from ...</a>.
+      </p>
+      <p class="govuk-body">
+        (6) The carbon footprint for iPhones assumes an iPhone SE, with emission factors listed
         <a href="https://www.apple.com/environment/pdf/products/iphone/iPhone_SE_PER_March2022.pdf" 
         class="govuk-link" rel="noreferrer noopener" target="_blank">in this report from Apple (2022)</a>.
       </p>
@@ -237,7 +244,7 @@
               text: "Bus"
             },
             {
-              text: "0.108 kg CO2e"
+              text: "0.135 kg CO2e"
             }
           ],
           [
@@ -245,7 +252,7 @@
               text: "Train"
             },
             {
-              text: "0.0355 kg CO2e"
+              text: "0.0444 kg CO2e"
             }
           ],
           [
@@ -261,7 +268,7 @@
               text: "Tram/Tube"
             },
             {
-              text: "0.0273 kg CO2e"
+              text: "0.0361 kg CO2e"
             }
           ]
         ]
@@ -285,7 +292,7 @@
     
 
       {{ govukTable({
-        caption: "Car emissions in kg of CO2e",
+        caption: "Car emissions in kg of CO2e per km",
         captionClasses: "govuk-table__caption--m",
         firstCellIsHeader: true,
         head: [
@@ -311,15 +318,15 @@
               text: "Petrol"
             },
             {
-              text: "0.23126",
+              text: "0.18385",
               format: "numeric"
             },
             {
-              text: "0.28526",
+              text: "0.22683",
               format: "numeric"
             },
             {
-              text: "0.43267",
+              text: "0.34413",
               format: "numeric"
             }
           ],
@@ -328,15 +335,15 @@
               text: "Diesel"
             },
             {
-              text: "0.22522",
+              text: "0.17403",
               format: "numeric"
             },
             {
-              text: "0.27050",
+              text: "0.20910",
               format: "numeric"
             },
             {
-              text: "0.33362",
+              text: "0.25799",
               format: "numeric"
             }
           ],
@@ -345,15 +352,15 @@
               text: "Electric"
             },
             {
-              text: "0.00",
+              text: "0.05232",
               format: "numeric"
             },
             {
-              text: "0.00",
+              text: "0.05599",
               format: "numeric"
             },
             {
-              text: "0.00",
+              text: "0.10689",
               format: "numeric"
             }
           ],
@@ -362,15 +369,15 @@
               text: "Hybrid"
             },
             {
-              text: "0.18143",
+              text: "0.14300",
               format: "numeric"
             },
             {
-              text: "0.18492",
+              text: "0.14488",
               format: "numeric"
             },
             {
-              text: "0.24921",
+              text: "0.19304",
               format: "numeric"
             }
           ],
@@ -379,15 +386,15 @@
               text: "Plug in Hybrid"
             },
             {
-              text: "0.04848",
+              text: "0.07598",
               format: "numeric"
             },
             {
-              text: "0.13066",
+              text: "0.11836",
               format: "numeric"
             },
             {
-              text: "0.16506",
+              text: "0.17688",
               format: "numeric"
             }
           ]
@@ -401,6 +408,7 @@
         The emission factors for cars can be found in the following UK Government guidelines:
         <a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024" 
         class="govuk-link" rel="noreferrer noopener" target="_blank">Greenhouse gas reporting: conversion factors 2024</a>.
+        These emissions are calculated using the fuel emissions, electricity production, transmission, and distribution, and the well to tank (WTT) emissions.
       </p>
 
 

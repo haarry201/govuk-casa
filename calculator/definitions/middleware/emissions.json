@@ -21,32 +21,32 @@
     "transportFactors": {
       "car": {
         "small": {
-          "petrol": 0.23126,
-          "diesel": 0.22522,
-          "electric": 0.00,
-          "hybrid": 0.18143,
-          "plugInHybrid": 0.04848
+          "petrol": 0.18385,
+          "diesel": 0.17403,
+          "electric": 0.05232,
+          "hybrid": 0.143,
+          "plugInHybrid": 0.07598
         },
         "medium": {
-          "petrol": 0.28526,
-          "diesel": 0.27050,
-          "electric": 0.00,
-          "hybrid": 0.18492,
-          "plugInHybrid": 0.13066
+          "petrol": 0.22683,
+          "diesel": 0.2091,
+          "electric": 0.05599,
+          "hybrid": 0.14488,
+          "plugInHybrid": 0.11836
         },
         "large": {
-          "petrol": 0.43267,
-          "diesel": 0.33362,
-          "electric": 0.00,
-          "hybrid": 0.24921,
-          "plugInHybrid": 0.16506
+          "petrol": 0.34413,
+          "diesel": 0.25799,
+          "electric": 0.10689,
+          "hybrid": 0.19304,
+          "plugInHybrid": 0.17688
         }
       },
-      "bus": 0.10846,
-      "train": 0.03546,
+      "bus": 0.13495,
+      "train": 0.04443,
       "walk": 0.0,
       "bike": 0.0,
-      "tram": 0.0273403
+      "tram": 0.03609
     },
     "messageFactors": {
       "messages": 0.000056,
