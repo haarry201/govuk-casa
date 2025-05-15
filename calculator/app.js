@@ -16,7 +16,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const application = ({ MOUNT_URL = "/" }) => {
     const plan = planFactory();
-    const { mount } = configure({
+    const { ancillaryRouter, mount } = configure({
         views: [resolve(__dirname, "views")],
         session: {
             name: "myappsessionid",
@@ -37,7 +37,7 @@ const application = ({ MOUNT_URL = "/" }) => {
         plan
     });
 
-
+    ancillaryRouter.get(/^\/$/, (req, res) => res.render('pages/start.njk'));
 
     const casaApp = ExpressJS();
     mount(casaApp);

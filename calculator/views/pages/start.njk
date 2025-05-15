@@ -1,0 +1,34 @@
+{% extends "layouts/main.njk" %}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block casaPageTitle %}
+  {{ t('start:pageTitle') }}
+{% endblock %}
+
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+    {{ t('start:h1') }}
+    </h1>
+
+      <p>Use this service to check:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Your average carbon emissions at work</li>
+        <li>Your carbon emissions compared to others</li>
+        <li>How to lower your emissions</li>
+      </ul>
+
+      {{ govukButton({
+        text: "Start now",
+        href: casa.mountUrl + "laptop",
+        isStartButton: true
+      }) }}
+
+    </div>
+
+  </div>
+
+
+{% endblock %}
